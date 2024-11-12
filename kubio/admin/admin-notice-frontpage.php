@@ -45,7 +45,34 @@ wp_localize_script(
 	</div>
 	<div class="content-holder">
 		<ul class="predefined-front-pages">
-			<?php foreach ( \ColibriWP\Theme\Defaults::get( 'front_page_designs' ) as $kubio_design_index => $design ) : ?>
+			<?php
+            $front_page_designs =  array(
+                array(
+                    'name'    => __( 'Modern', 'kubio' ),
+                    'index'   => 1,
+                    'preview' => 'front-page-1.jpg',
+                ),
+
+                array(
+                    'name'    => __( 'Fullscreen', 'kubio' ),
+                    'index'   => 2,
+                    'preview' => 'front-page-2.jpg',
+                ),
+
+                array(
+                    'name'    => __( 'Classic', 'kubio' ),
+                    'index'   => 3,
+                    'preview' => 'front-page-3.jpg',
+                ),
+
+                array(
+                    'name'    => __( '', 'kubio' ),
+                    'index'   => 4,
+                    'preview' => 'admin/ai-icon.svg',
+                ),
+            );
+
+            foreach ( $front_page_designs as $kubio_design_index => $design ) : ?>
 				<?php
 					$kubio_design_selected = $kubio_design_index === 0 ? 'selected' : '';
 					$preview_image_name      = isset( $design['preview'] ) ? $design['preview'] : "front-page-{$design['index']}.png";
@@ -71,7 +98,7 @@ wp_localize_script(
                             if($design['name'] === ""){?>
                                 <div class="predefined-front-page-card-footer">
                                     <h3 class="design-content">
-			                            <?php echo "Generate a tailored website in minutes using AI"; ?>
+			                            <?php echo __("Generate a tailored website in minutes using AI", 'kubio'); ?>
                                     </h3>
                                 </div>
                         <?php }

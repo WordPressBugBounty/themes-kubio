@@ -129,7 +129,6 @@ return array (
                 array (
                   'source' => 
                   array (
-                    'url' => 'https://wps.iconvert.pro/wp2/kubio-themes/kubio-theme-default-2/wp-content/uploads/2024/01/hero3.jpg',
                     'gradient' => 'linear-gradient(0deg, rgba(161,140,209,1) 0%, rgba(251,194,235,1) 100% )',
                   ),
                   'position' => 
@@ -308,7 +307,6 @@ return array (
                 array (
                   'source' => 
                   array (
-                    'url' => 'https://wps.iconvert.pro/wp2/kubio-themes/kubio-theme-default-2/wp-content/uploads/2024/01/hero.jpg',
                     'gradient' => 'linear-gradient(0deg, rgba(161,140,209,1) 0%, rgba(251,194,235,1) 100% )',
                   ),
                   'position' => 
@@ -329,22 +327,6 @@ return array (
                 array (
                   'value' => 500,
                 ),
-              ),
-              'video' => 
-              array (
-                'poster' => 
-                array (
-                  'url' => 'http://wpsites.extendstudio.net/wp/alexandra-n/one-page-kubio-1/wp-content/uploads/2022/07/demo-video-cover.jpg',
-                ),
-                'internal' => 
-                array (
-                  'url' => 'https://wps.iconvert.pro/wp2/kubio-themes/kubio-theme-default-2/wp-content/uploads/2024/01/demo-video.mp4',
-                ),
-                'external' => 
-                array (
-                  'url' => '',
-                ),
-                'type' => 'external',
               ),
             ),
             'padding' => 
@@ -523,7 +505,7 @@ return array (
       array (
         'link' => 
         array (
-          'value' => 'https://wps.iconvert.pro/wp2/kubio-themes/kubio-theme-default-2/#contact',
+          'value' => '#contact',
           'typeOpenLink' => 'sameWindow',
           'noFollow' => false,
           'lightboxMedia' => '',
@@ -583,7 +565,6 @@ return array (
                   'source' => 
                   array (
                     'type' => 'image',
-                    'url' => 'https://wps.iconvert.pro/wp2/kubio-themes/kubio-theme-default-2/wp-content/uploads/2024/01/hero3.jpg',
                     'gradient' => 'linear-gradient(0deg, rgba(161,140,209,1) 0%, rgba(251,194,235,1) 100% )',
                   ),
                   'position' => 

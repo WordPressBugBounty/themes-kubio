@@ -43,7 +43,7 @@ class Title extends ComponentBase {
 
 				),
 				"{$prefix}localProps.content" => array(
-					'default' => Defaults::get( 'edit_this_text_in_customizer' ),
+					'default' => __( 'Unleashing the Hero Within', 'kubio' ),
 					'control' => array(
 						'label'       => Translations::get( 'title' ),
 						'type'        => 'input',

@@ -182,11 +182,11 @@ $kubio_gradients = array(
 		),
 
 );
-$kubio_theme_action_button           = __( 'Get in control', 'kubio' );
-$kubio_theme_action_button_secondary = __( 'Contact us', 'kubio' );
+$kubio_theme_action_button           =  'Get in control';
+$kubio_theme_action_button_secondary = 'Contact us';
 
-$kubio_theme_click_pen_to_edit_title = __( 'Unleashing the Hero Within', 'kubio' );
-$kubio_lorem_ipsum                   = __( 'Discover your untapped potential and become the hero of your own narrative – where every day is an opportunity for a new, epic adventure.', 'kubio');
+$kubio_theme_click_pen_to_edit_title = 'Unleashing the Hero Within';
+$kubio_lorem_ipsum                   =  'Discover your untapped potential and become the hero of your own narrative – where every day is an opportunity for a new, epic adventure.';
 
 
 return array(
@@ -625,29 +625,4 @@ return array(
 	'blog_show_post_thumb_placeholder'  => true,
 	'blog_posts_per_row'                => 2,
 	'blog_enable_masonry'               => true,
-	'front_page_designs'                => array(
-		array(
-			'name'    => __( 'Modern', 'kubio' ),
-			'index'   => 1,
-			'preview' => 'front-page-1.jpg',
-		),
-
-		array(
-			'name'    => __( 'Fullscreen', 'kubio' ),
-			'index'   => 2,
-			'preview' => 'front-page-2.jpg',
-		),
-
-		array(
-			'name'    => __( 'Classic', 'kubio' ),
-			'index'   => 3,
-			'preview' => 'front-page-3.jpg',
-		),
-
-		array(
-			'name'    => __( '', 'kubio' ),
-			'index'   => 4,
-			'preview' => 'admin/ai-icon.svg',
-		),
-	),
 );

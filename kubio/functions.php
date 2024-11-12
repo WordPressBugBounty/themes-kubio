@@ -126,14 +126,16 @@ kubio_theme()
             'width'       => 150,
             'height'      => 70,
         )
-    )
-    ->register_menus(
+    );
+
+add_action('after_setup_theme', function() {
+    kubio_theme() ->register_menus(
         array(
             'header-menu' => esc_html__('Header Menu', 'kubio'),
             'footer-menu' => esc_html__('Footer Menu', 'kubio'),
         )
     );
-
+}, 1);
 if (!apply_filters('kubio_is_enabled', false)) {
     kubio_assets()
         ->registerTemplateScript(
