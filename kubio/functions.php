@@ -282,6 +282,15 @@ add_action(
 	}
 );
 
+
+add_filter(
+	'kubio/advanced_mode_enabled',
+	function ($value) {
+		return false;
+	}
+);
+
+
 Hooks::prefixed_add_action(
 	'after_plugin_activated',
 	function ( $slug ) {
