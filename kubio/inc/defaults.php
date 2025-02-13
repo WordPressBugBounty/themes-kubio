@@ -186,7 +186,7 @@ $kubio_theme_action_button           =  'Get in control';
 $kubio_theme_action_button_secondary = 'Contact us';
 
 $kubio_theme_click_pen_to_edit_title = 'Unleashing the Hero Within';
-$kubio_lorem_ipsum                   =  'Discover your untapped potential and become the hero of your own narrative – where every day is an opportunity for a new, epic adventure.';
+$kubio_lorem_ipsum                   =  'Discover your untapped potential and become the hero of your own narrative where every day is an opportunity for a new, epic adventure.';
 
 
 return array(
