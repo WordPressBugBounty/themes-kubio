@@ -135,7 +135,10 @@ class EnableKubioInCustomizerPanel extends \WP_Customize_Panel {
 
 	protected function render() {
 
-		$message = __( 'The Kubio plugin takes Kubio to a whole new level by adding new and powerful editing and styling options. Wanna have full control over your design with Kubio?', 'kubio' );
+		$message = sprintf(
+			__( 'To enable all the theme features, please install Kubio Page Builder plugin', 'kubio' ),
+			wp_get_theme( get_stylesheet() )->get( 'Name' )
+		);
 
 		?>
 		<li class="accordion-section kubio-customizer-panel">

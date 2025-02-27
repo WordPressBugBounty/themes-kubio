@@ -18,6 +18,9 @@ class PluginMessageControl extends VueControl {
 
 		?>
 		<div class="plugin-message card">
+			<button class="el-button el-button--icon el-button--text colibri-plugin-message-close">
+				<i class="el-icon-close"></i>
+			</button>
 			<p>
 				<?php echo Translations::get( 'plugin_message', 'Kubio Page Builder' ); ?>
 			</p>
@@ -70,13 +73,13 @@ class PluginMessageControl extends VueControl {
 			function () {
 
 				$data = array(
-					'theme_prefix' => Theme::prefix( '', false ),
-					'slug'         => $this->getBuilderSlug(),
-					'status'       => Theme::getInstance()->getPluginsManager()->getPluginState( 'kubio' ),
-					'install_url'  => Theme::getInstance()->getPluginsManager()->getInstallLink( 'kubio' ),
-					'activate_url' => Theme::getInstance()->getPluginsManager()->getActivationLink( 'kubio' ),
-                    'plugin_activate_nonce' => wp_create_nonce( 'plugin_activate_nonce' ),
-					'messages'     => array(
+					'theme_prefix'          => Theme::prefix( '', false ),
+					'slug'                  => $this->getBuilderSlug(),
+					'status'                => Theme::getInstance()->getPluginsManager()->getPluginState( 'kubio' ),
+					'install_url'           => Theme::getInstance()->getPluginsManager()->getInstallLink( 'kubio' ),
+					'activate_url'          => Theme::getInstance()->getPluginsManager()->getActivationLink( 'kubio' ),
+					'plugin_activate_nonce' => wp_create_nonce( 'plugin_activate_nonce' ),
+					'messages'              => array(
 						'installing' => Translations::get(
 							'installing',
 							'Kubio Page Builder'
@@ -86,7 +89,7 @@ class PluginMessageControl extends VueControl {
 							'Kubio Page Builder'
 						),
 					),
-					'admin_url'    => add_query_arg(
+					'admin_url'             => add_query_arg(
 						array(
 							'colibri_create_pages'       => '1',
 							'colibri_generator_callback' => 'customizer',

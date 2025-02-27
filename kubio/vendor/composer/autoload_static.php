@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitfe5970a5b0523d825c4010fcb8cd325a
+class ComposerStaticInitf17e6119feb5763a92e1c6292cb615cd
 {
     public static $files = array (
         'f40eb6b6e72038beec37d8a0baa6e2f0' => __DIR__ . '/../..' . '/inc/template-functions.php',
@@ -18,6 +18,7 @@ class ComposerStaticInitfe5970a5b0523d825c4010fcb8cd325a
         'K' => 
         array (
             'Kubio\\Theme\\' => 12,
+            'Kubio\\StarterContent\\' => 21,
         ),
         'C' => 
         array (
@@ -33,6 +34,10 @@ class ComposerStaticInitfe5970a5b0523d825c4010fcb8cd325a
         'Kubio\\Theme\\' => 
         array (
             0 => __DIR__ . '/../..' . '/lib/kubio-themebase/src',
+        ),
+        'Kubio\\StarterContent\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/lib/kubio-starter-content/src',
         ),
         'ColibriWP\\Theme\\' => 
         array (
@@ -129,6 +134,7 @@ class ComposerStaticInitfe5970a5b0523d825c4010fcb8cd325a
         'ColibriWP\\Theme\\ThemeTranslations' => __DIR__ . '/../..' . '/lib/colibriwp/src/ThemeTranslations.php',
         'ColibriWP\\Theme\\Translations' => __DIR__ . '/../..' . '/lib/colibriwp/src/Translations.php',
         'ColibriWP\\Theme\\View' => __DIR__ . '/../..' . '/lib/colibriwp/src/View.php',
+        'Kubio\\StarterContent\\StarterContent' => __DIR__ . '/../..' . '/lib/kubio-starter-content/src/StarterContent.php',
         'Kubio\\Theme\\Components\\CSSOutput' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/Components/CssOutput.php',
         'Kubio\\Theme\\Components\\Common\\HeroStyle' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/Components/Common/HeroStyle.php',
         'Kubio\\Theme\\Components\\Common\\NavigationStyle' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/Components/Common/NavigationStyle.php',
@@ -142,6 +148,7 @@ class ComposerStaticInitfe5970a5b0523d825c4010fcb8cd325a
         'Kubio\\Theme\\Components\\FrontHeader\\TopBar' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/Components/FrontHeader/TopBar.php',
         'Kubio\\Theme\\Components\\FrontHeader\\TopBarListIcons' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/Components/FrontHeader/TopBarListIcons.php',
         'Kubio\\Theme\\Components\\FrontHeader\\TopBarSocialIcons' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/Components/FrontHeader/TopBarSocialIcons.php',
+        'Kubio\\Theme\\Components\\FrontPageContent' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/Components/FrontPageContent.php',
         'Kubio\\Theme\\Components\\Header' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/Components/Header.php',
         'Kubio\\Theme\\Components\\HeaderMenu' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/Components/HeaderMenu.php',
         'Kubio\\Theme\\Components\\Header\\Logo' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/Components/Header/Logo.php',
@@ -165,9 +172,9 @@ class ComposerStaticInitfe5970a5b0523d825c4010fcb8cd325a
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitfe5970a5b0523d825c4010fcb8cd325a::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitfe5970a5b0523d825c4010fcb8cd325a::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitfe5970a5b0523d825c4010fcb8cd325a::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitf17e6119feb5763a92e1c6292cb615cd::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitf17e6119feb5763a92e1c6292cb615cd::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitf17e6119feb5763a92e1c6292cb615cd::$classMap;
 
         }, null, ClassLoader::class);
     }

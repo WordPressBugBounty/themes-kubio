@@ -77,6 +77,9 @@ class Theme extends ThemeBase {
             return false;
         }
 
+		if ( Flags::get( 'with_starter_content', false ) ) {
+			return false;
+		}
         if ( $pagenow === 'update.php' ) {
             return false;
         }
@@ -223,25 +226,31 @@ class Theme extends ThemeBase {
 
     public function themeWasCustomized() {
 
-        if ( Flags::get( 'theme_customized' ) ) {
-            return true;
-        }
+		if ( Flags::get( 'theme_customized' ) ) {
+			return true;
+		}
 
-        $mods         = get_theme_mods();
-        $mods_keys    = array_keys( is_array( $mods ) ? $mods : array() );
-        $default_keys = array_keys( Defaults::getDefaults() );
+		$mods              = get_theme_mods();
+		$mods_keys         = array_keys( is_array( $mods ) ? $mods : array() );
+		$default_keys      = array_keys( Defaults::getDefaults() );
+		$default_blog_keys = array(
+			'blog_post_thumb_placeholder_color',
+			'blog_show_post_thumb_placeholder',
+			'blog_posts_per_row',
+			'blog_enable_masonry'
+		);
 
-        foreach ( $default_keys as $default_key ) {
-            foreach ( $mods_keys as $mod_key ) {
-                if ( strpos( $mod_key, "{$default_key}." ) === 0 ) {
-                    Flags::set( 'theme_customized', true );
+		foreach ( $default_keys as $default_key ) {
+			foreach ( $mods_keys as $mod_key ) {
+				if ( in_array( $mod_key, $default_blog_keys, true ) || strpos( $mod_key, "{$default_key}." ) === 0 ) {
+					Flags::set( 'theme_customized', true );
 
-                    return true;
-                }
-            }
-        }
+					return true;
+				}
+			}
+		}
 
-        return false;
+		return false;
     }
 
 

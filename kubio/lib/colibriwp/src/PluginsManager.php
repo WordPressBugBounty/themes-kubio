@@ -65,18 +65,18 @@ class PluginsManager {
 		Hooks::add_wp_ajax(
 			'activate_plugin',
 			function () {
-                check_ajax_referer( 'plugin_activate_nonce');
-				$slug = isset( $_REQUEST['slug'] ) ? $_REQUEST['slug'] : false;
-                $source = sanitize_text_field(Utils::pathGet($_REQUEST, 'source', ""));
-				
-                if ($source) {
-                    Flags::set('start_source', $source);
-                }
+				check_ajax_referer( 'plugin_activate_nonce' );
+				$slug   = isset( $_REQUEST['slug'] ) ? $_REQUEST['slug'] : false;
+				$source = sanitize_text_field( Utils::pathGet( $_REQUEST, 'source', '' ) );
 
-				if ($source && strpos($source,  "customizer-sidebar") === 0) {
-					Flags::set('import_design', true);
+				if ( $source ) {
+					Flags::set( 'start_source', $source );
 				}
-				
+
+				if ( $source && strpos( $source, 'customizer-sidebar' ) === 0 ) {
+					Flags::set( 'import_design', true );
+				}
+
 				if ( $slug && ( $path = $this->getPluginData( "{$slug}.plugin_path" ) ) ) {
 					$ac   = get_option( 'active_plugins' );
 					$ac[] = $path;

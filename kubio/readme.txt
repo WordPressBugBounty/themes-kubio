@@ -110,6 +110,8 @@ The exceptions to this license are as follows:
         resources/images/header-shapes/two-circles.png
         resources/images/header-shapes/waves.png
 
+        starter-content/media/image-16.png
+
   These assets are distributed under the CC0 License:
 
         resources/images/background-image.jpg
@@ -184,6 +186,108 @@ The exceptions to this license are as follows:
                 https://pxhere.com/en/photo/860237
                 https://pxhere.com/en/photo/780590
                 https://stocksnap.io/photo/architecture-building-BB7EVG2D2H
+
+        Images used as part of Starter Content:
+        
+            About: 
+                starter-content/media/image-1.jpg
+                License: CC0 1.0 Universal (CC0 1.0)
+                Source: https://stocksnap.io/photo/people-man-LE772J7L3Q
+          
+            Features:
+                starter-content/media/image-2.jpg
+                License: CC0 1.0 Universal (CC0 1.0)
+                Source: https://stocksnap.io/photo/woman-building-KO1N9T3HRS
+                
+                starter-content/media/image-3.jpg
+                License: CC0 1.0 Universal (CC0 1.0)
+                Source: https://stocksnap.io/photo/hand-wall-UMW1XL2MHI
+                
+                starter-content/media/image-4.jpg
+                License: CC0 1.0 Universal (CC0 1.0)
+                Source: https://stocksnap.io/photo/people-man-AJM74IIPDC
+            
+            Content 1: 
+                starter-content/media/image-5.jpg
+                License: CC0 1.0 Universal (CC0 1.0)
+                Source: https://stocksnap.io/photo/scenic-hiking-OBEISDWENT
+            
+            Content 2: 
+                starter-content/media/image-6.jpg
+                License: CC0 1.0 Universal (CC0 1.0)
+                Source: https://stocksnap.io/photo/home-plant-GR6HPCTOTT
+           
+            Our projects:
+              starter-content/media/image-10.jpg
+              License: CC0 1.0 Universal (CC0 1.0)
+              Source: https://stocksnap.io/photo/outdoor-patio-K3I9NUCRFT
+
+              starter-content/media/image-11.jpg
+              License: CC0 1.0 Universal (CC0 1.0)
+              Source: https://stocksnap.io/photo/business-keyboard-FO7KLVRKXF
+
+              starter-content/media/image-12.jpg
+              License: CC0 1.0 Universal (CC0 1.0)
+              Source: https://stocksnap.io/photo/home-bed-FI0NYMQOG8
+
+              starter-content/media/image-13.jpg
+              License: CC0 1.0 Universal (CC0 1.0)
+              Source: https://stocksnap.io/photo/geometric-wood-T9TTPDEC25
+
+              starter-content/media/image-14.jpg
+              License: CC0 1.0 Universal (CC0 1.0)
+              Source: https://stocksnap.io/photo/plastic-texture-PASQZS0DHR
+
+              starter-content/media/image-15.jpg
+              License: CC0 1.0 Universal (CC0 1.0)
+              Source: https://stocksnap.io/photo/flatlay-card-HZCONIDAHM
+            
+            Testimonials:
+              starter-content/media/image-17.jpg
+              License: CC0 1.0 Universal (CC0 1.0)
+              Source: https://stocksnap.io/photo/woman-portrait-CLTJPNEBUL
+
+              starter-content/media/image-18.jpg
+              License: CC0 1.0 Universal (CC0 1.0)
+              Source: https://stocksnap.io/photo/people-man-8O83EE9RGN
+
+              starter-content/media/image-19.jpg
+              License: CC0 1.0 Universal (CC0 1.0)
+              Source: https://stocksnap.io/photo/woman-foliage-ZADVYOQOXD
+            
+            CTA:
+              starter-content/media/image-20.jpg
+              License: CC0 1.0 Universal (CC0 1.0)
+              Source: https://stocksnap.io/photo/street-night-Y4MZPGQXBE
+            
+            Our team:
+              starter-content/media/image-21.jpg
+              License: CC0 1.0 Universal (CC0 1.0)
+              Source: https://stocksnap.io/photo/man-business-YFDGJ5ZJYK
+              
+              starter-content/media/image-22.jpg
+              License: CC0 1.0 Universal (CC0 1.0)
+              Source: https://stocksnap.io/photo/taking-picture-CZPLAQDWJN
+              
+              starter-content/media/image-23.jpg
+              License: CC0 1.0 Universal (CC0 1.0)
+              Source: https://stocksnap.io/photo/people-man-A3WDGDTBI6
+
+            Contact: 
+              starter-content/media/image-24.jpg
+              License: CC0 1.0 Universal (CC0 1.0)
+              Source: https://stocksnap.io/photo/architecture-building-EBIL7VH4ED
+
+- Google Icons:
+  Licensed under Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+
+  starter-content/media/image-7.jpg  
+  https://fonts.google.com/icons?selected=Material+Symbols+Outlined:finance_mode:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=finance&icon.size=24&icon.color=%235f6368
+  starter-content/media/image-8.jpg
+  https://fonts.google.com/icons?selected=Material+Symbols+Outlined:support_agent:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=person&icon.size=24&icon.color=%235f6368
+  starter-content/media/image-9.jpg
+  https://fonts.google.com/icons?selected=Material+Symbols+Outlined:inventory_2:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=box&icon.size=24&icon.color=%235f6368
+ 
 
 - Google Fonts:
 

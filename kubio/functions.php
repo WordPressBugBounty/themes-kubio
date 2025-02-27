@@ -7,6 +7,10 @@
 
 use ColibriWP\Theme\Core\Hooks;
 use ColibriWP\Theme\Core\Utils;
+use Kubio\StarterContent\StarterContent;
+use ColibriWP\Theme\Defaults;
+use ColibriWP\Theme\Translations;
+use Kubio\Core\Activation;
 use Kubio\Theme\Components\CssOutput;
 use Kubio\Theme\Components\Footer;
 use Kubio\Theme\Components\FrontHeader\Buttons;
@@ -18,6 +22,7 @@ use Kubio\Theme\Components\FrontHeader\Title;
 use Kubio\Theme\Components\FrontHeader\TopBar;
 use Kubio\Theme\Components\FrontHeader\TopBarListIcons;
 use Kubio\Theme\Components\FrontHeader\TopBarSocialIcons;
+use Kubio\Theme\Components\FrontPageContent;
 use Kubio\Theme\Components\Header;
 use Kubio\Theme\Components\Header\Logo;
 use Kubio\Theme\Components\HeaderMenu;
@@ -33,65 +38,64 @@ use Kubio\Theme\Components\PageNotFound;
 use Kubio\Theme\Components\SingleContent;
 use Kubio\Theme\Flags;
 use Kubio\Theme\Theme;
-use Kubio\Core\Activation;
 
 require_once get_template_directory() . '/vendor/autoload.php';
 require_once __DIR__ . '/inc/safari-polyfills.php';
 
 function kubio_register_components($components) {
-    $namespace = 'ColibriWP\\Theme\\Components';
+	$namespace = 'ColibriWP\\Theme\\Components';
 
-    $components = array_merge(
-        $components,
-        array(
+	$components = array_merge(
+		$components,
+		array(
 
-            // header components
-            'header'               => Header::class,
-            'logo'                 => Logo::class,
-            'header-menu'          => HeaderMenu::class,
+			// header components
+			'header'               => Header::class,
+			'logo'                 => Logo::class,
+			'header-menu'          => HeaderMenu::class,
 
-            // inner page fragments
-            'inner-nav-bar'        => InnerNavigation::class,
-            'inner-hero'           => InnerHero::class,
-            'inner-title'          => InnerTitle::class,
-            'inner-top-bar'        => InnerTopBar::class,
+			// inner page fragments
+			'inner-nav-bar'        => InnerNavigation::class,
+			'inner-hero'           => InnerHero::class,
+			'inner-title'          => InnerTitle::class,
+			'inner-top-bar'        => InnerTopBar::class,
 
-            // front page fragments
-            'front-hero'           => FrontPageHero::class,
-            'front-title'          => Title::class,
-            'front-subtitle'       => Subtitle::class,
-            'buttons'              => Buttons::class,
-            'front-nav-bar'        => Navigation::class,
-            'top-bar-list-icons'   => TopBarListIcons::class,
-            'top-bar-social-icons' => TopBarSocialIcons::class,
-            'front-top-bar'        => TopBar::class,
-            'front-image'          => Image::class,
+			// front page fragments
+			'front-hero'           => FrontPageHero::class,
+			'front-title'          => Title::class,
+			'front-subtitle'       => Subtitle::class,
+			'buttons'              => Buttons::class,
+			'front-nav-bar'        => Navigation::class,
+			'top-bar-list-icons'   => TopBarListIcons::class,
+			'top-bar-social-icons' => TopBarSocialIcons::class,
+			'front-top-bar'        => TopBar::class,
+			'front-image'          => Image::class,
 
-            // footer components
-            'front-footer'         => Footer::class,
+			// footer components
+			'front-footer'         => Footer::class,
 
-            // general components
-            'css'                  => CssOutput::class,
+			// general components
+			'css'                  => CssOutput::class,
 
-            // page content
-            'main'                 => MainContent::class, // blog loop
-            'single'               => SingleContent::class, // single page
-            'content'              => PageContent::class, // inner page content
-            'front-page-content'   => "{$namespace}\\FrontPageContent", // front page content
-            'search'               => "{$namespace}\\PageSearch", // search page
-            'page-not-found'       => PageNotFound::class, // 404 page
+			// page content
+			'main'                 => MainContent::class, // blog loop
+			'single'               => SingleContent::class, // single page
+			'content'              => PageContent::class, // inner page content
+			'front-page-content'   => FrontPageContent::class, // front page content
+			'search'               => "{$namespace}\\PageSearch", // search page
+			'page-not-found'       => PageNotFound::class, // 404 page
 
-            // inner content fragments
+			// inner content fragments
 
-            // main content
-            'main-loop'            => ArchiveLoop::class, // no usage found
-            'post-loop'            => PostLoop::class, // single page content
-            'archive-loop'         => ArchiveLoop::class, // blog page content
+			// main content
+			'main-loop'            => ArchiveLoop::class, // no usage found
+			'post-loop'            => PostLoop::class, // single page content
+			'archive-loop'         => ArchiveLoop::class, // blog page content
 
-        )
-    );
+		)
+	);
 
-    return $components;
+	return $components;
 }
 
 Hooks::prefixed_add_filter('components', 'kubio_register_components', 20);
@@ -191,30 +195,31 @@ function kubio_after_activation_redirect_url( $url ) {
 }
 
 Hooks::add_wp_ajax(
-    'front_set_predesign',
-    function () {
-        check_ajax_referer('kubio_front_set_predesign_nonce', 'nonce');
-        $with_ai = Utils::pathGet($_REQUEST, 'AI', 'no');
-        $source = sanitize_text_field(Utils::pathGet($_REQUEST, 'source', 'notice'));
-	    $index   = intval( Utils::pathGet( $_REQUEST, 'index', 0 ) );
+	'front_set_predesign',
+	function () {
+		check_ajax_referer( 'kubio_front_set_predesign_nonce', 'nonce' );
+		$with_ai = Utils::pathGet( $_REQUEST, 'AI', 'no' );
+		$source  = sanitize_text_field( Utils::pathGet( $_REQUEST, 'source', 'notice' ) );
+		$index   = intval( Utils::pathGet( $_REQUEST, 'index', 0 ) );
 
-	    if ( $with_ai === 'yes' ) {
-		    Flags::set( 'start_with_ai', true );
-	    } else {
-		    Flags::set( 'import_design', true );
-		    Flags::set( 'import_design_index', $index );
-	    }
+		if ( $with_ai === 'yes' ) {
+			Flags::set( 'start_with_ai', true );
+		} else {
+			Flags::set( 'import_design', true );
+			Flags::set( 'import_design_index', $index );
+		}
 
-	    // customizer source
-	    $start_source = $source;
+		// customizer source
+		$start_source = $source;
 
-	    if ( $source === 'notice' ) {
-		    $start_source = $with_ai === 'yes' ? "{$source}-ai" : "{$source}-homepage";
-	    }
-        Flags::set('start_source', $start_source);
+		if ( $source === 'notice' ) {
+			$start_source = $with_ai === 'yes' ? "{$source}-ai" : "{$source}-homepage";
+		}
 
-        wp_send_json_success();
-    }
+		Flags::set( 'start_source', $start_source );
+
+		wp_send_json_success();
+	}
 );
 
 function kubio_get_builder_plugin_slug() {
@@ -306,11 +311,12 @@ Hooks::prefixed_add_action(
 					array(
 						'page'                  => 'kubio',
 						'kubio-activation-hash' => $hash,
+						'source'                => $start_source,
 					),
 					admin_url( 'admin.php' )
 				);
 			} else {
-				if ( $start_source == 'starter-sites' ) {
+				if ( $start_source === 'starter-sites' ) {
 					$url = add_query_arg(
 						array(
 							'page'                  => 'kubio-get-started',
@@ -427,3 +433,80 @@ function kubio_onboarding_init() {
 }
 
 add_action('after_switch_theme', 'kubio_onboarding_init');
+Hooks::prefixed_add_filter(
+	'translations',
+	function( $translations ) {
+		$translations['customize_preview_overlay_message']  = __( 'These features are part of the Kubio Page Builder plugin. Using them will install the plugin.', 'kubio' );
+		$translations['customize_preview_overlay_button_1'] = __( 'Edit this section', 'kubio' );
+		$translations['customize_preview_overlay_button_2'] = __( 'Replace this section', 'kubio' );
+
+		return $translations;
+	}
+);
+
+
+add_filter(
+	'kubio_starter_content_overlay_style',
+	function() {
+
+		return array(
+			'background' => 'rgba(0,0,0,0.8)',
+			'transition' => 'opacity 0.3s ease',
+			'button-1'   => array(
+				'normal' => array(
+					'background' => 'transparent',
+					'color'      => '#fff',
+					'border'     => '#fff',
+				),
+				'hover'  => array(
+					'background' => 'rgba(255,255,255,0.2)',
+					'color'      => '#fff',
+					'border'     => '#fff',
+				),
+			),
+			'button-2'   => array(
+				'normal' => array(
+					'background' => 'transparent',
+					'color'      => '#fff',
+					'border'     => '#fff',
+				),
+				'hover'  => array(
+					'background' => 'rgba(255,255,255,0.2)',
+					'color'      => '#fff',
+					'border'     => '#fff',
+				),
+			),
+		);
+	}
+);
+
+add_filter(
+	'kubio_starter_content_pages',
+	function() {
+		return array(
+			StarterContent::HOME_SLUG  => array(
+				'post_title' => __( 'Home', 'kubio' ),
+				'in_menu'    => true,
+			),
+
+			// StarterContent::ABOUT_SLUG => array(
+			// 	'post_title' => __( 'About', 'kubio' ),
+			// 	'in_menu'    => true,
+			// ),
+
+			StarterContent::BLOG_SLUG  => array(
+				'post_title' => __( 'Blog', 'kubio' ),
+				'in_menu'    => true,
+			),
+
+			// StarterContent::CONTACT    => array(
+			// 	'post_title' => __( 'Contact', 'kubio' ),
+			// 	'in_menu'    => true,
+			// ),
+
+		);
+	}
+);
+
+StarterContent::init();
+

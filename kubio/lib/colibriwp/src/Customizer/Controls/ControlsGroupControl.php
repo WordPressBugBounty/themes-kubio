@@ -46,7 +46,7 @@ class ControlsGroupControl extends VueControl {
 		</el-switch>
 
 		<el-popover
-				placement="right"
+				placement="right-end"
 				width="334"
 				trigger="click"
 				@show="onShow($event)">
