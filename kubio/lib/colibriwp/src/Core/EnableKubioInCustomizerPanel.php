@@ -4,6 +4,7 @@ namespace ColibriWP\Theme\Core;
 
 use ColibriWP\Theme\PluginsManager;
 use ColibriWP\Theme\Theme;
+use ColibriWP\Theme\Translations;
 use TGM_Plugin_Activation;
 
 const PRO = '-pro';
@@ -135,11 +136,8 @@ class EnableKubioInCustomizerPanel extends \WP_Customize_Panel {
 
 	protected function render() {
 
-		$message = sprintf(
-			__( 'To enable all the theme features, please install Kubio Page Builder plugin', 'kubio' ),
-			wp_get_theme( get_stylesheet() )->get( 'Name' )
-		);
-
+		$message = Translations::get('plugin_message', 'Kubio Page Builder');
+		
 		?>
 		<li class="accordion-section kubio-customizer-panel">
 		<?php if ( $this->getPluginState( $this->plugin_slug ) !== PluginsManager::ACTIVE_PLUGIN ) : ?>
