@@ -12,6 +12,14 @@ class Theme extends ThemeBase {
 
     private $state = array();
 
+    public function __construct() {
+        parent::__construct();
+
+        ReactAssetsRegistry::load();
+        AiOnboarding::load();
+    }
+
+
     public function afterSetup() {
         parent::afterSetup();
         add_action( 'admin_enqueue_scripts', array( $this, 'enqueueThemeInfoPageScripts' ), 20 );

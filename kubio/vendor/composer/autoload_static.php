@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit353cf2ffe3b97542005730d2361baa8c
+class ComposerStaticInitea3cc8342abbfdceb9c57be4a712e8c5
 {
     public static $files = array (
         'f40eb6b6e72038beec37d8a0baa6e2f0' => __DIR__ . '/../..' . '/inc/template-functions.php',
@@ -135,6 +135,7 @@ class ComposerStaticInit353cf2ffe3b97542005730d2361baa8c
         'ColibriWP\\Theme\\Translations' => __DIR__ . '/../..' . '/lib/colibriwp/src/Translations.php',
         'ColibriWP\\Theme\\View' => __DIR__ . '/../..' . '/lib/colibriwp/src/View.php',
         'Kubio\\StarterContent\\StarterContent' => __DIR__ . '/../..' . '/lib/kubio-starter-content/src/StarterContent.php',
+        'Kubio\\Theme\\AiOnboarding' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/AiOnboarding.php',
         'Kubio\\Theme\\Components\\CSSOutput' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/Components/CssOutput.php',
         'Kubio\\Theme\\Components\\Common\\HeroStyle' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/Components/Common/HeroStyle.php',
         'Kubio\\Theme\\Components\\Common\\NavigationStyle' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/Components/Common/NavigationStyle.php',
@@ -165,6 +166,9 @@ class ComposerStaticInit353cf2ffe3b97542005730d2361baa8c
         'Kubio\\Theme\\Components\\PageNotFound' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/Components/PageNotFound.php',
         'Kubio\\Theme\\Components\\SingleContent' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/Components/SingleContent.php',
         'Kubio\\Theme\\Flags' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/Flags.php',
+        'Kubio\\Theme\\Panels\\AiOnboardingPanel' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/Panels/AiOnboardingPanel.php',
+        'Kubio\\Theme\\ReactAssetsRegistry' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/ReactAssetsRegistry.php',
+        'Kubio\\Theme\\Singleton' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/Singleton.php',
         'Kubio\\Theme\\Theme' => __DIR__ . '/../..' . '/lib/kubio-themebase/src/Theme.php',
         'Wolfcast\\BrowserDetection' => __DIR__ . '/../..' . '/lib/browser-detection/BrowserDetection.php',
     );
@@ -172,9 +176,9 @@ class ComposerStaticInit353cf2ffe3b97542005730d2361baa8c
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit353cf2ffe3b97542005730d2361baa8c::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit353cf2ffe3b97542005730d2361baa8c::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit353cf2ffe3b97542005730d2361baa8c::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitea3cc8342abbfdceb9c57be4a712e8c5::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitea3cc8342abbfdceb9c57be4a712e8c5::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitea3cc8342abbfdceb9c57be4a712e8c5::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -95,6 +95,7 @@ return array(
     'ColibriWP\\Theme\\Translations' => $baseDir . '/lib/colibriwp/src/Translations.php',
     'ColibriWP\\Theme\\View' => $baseDir . '/lib/colibriwp/src/View.php',
     'Kubio\\StarterContent\\StarterContent' => $baseDir . '/lib/kubio-starter-content/src/StarterContent.php',
+    'Kubio\\Theme\\AiOnboarding' => $baseDir . '/lib/kubio-themebase/src/AiOnboarding.php',
     'Kubio\\Theme\\Components\\CSSOutput' => $baseDir . '/lib/kubio-themebase/src/Components/CssOutput.php',
     'Kubio\\Theme\\Components\\Common\\HeroStyle' => $baseDir . '/lib/kubio-themebase/src/Components/Common/HeroStyle.php',
     'Kubio\\Theme\\Components\\Common\\NavigationStyle' => $baseDir . '/lib/kubio-themebase/src/Components/Common/NavigationStyle.php',
@@ -125,6 +126,9 @@ return array(
     'Kubio\\Theme\\Components\\PageNotFound' => $baseDir . '/lib/kubio-themebase/src/Components/PageNotFound.php',
     'Kubio\\Theme\\Components\\SingleContent' => $baseDir . '/lib/kubio-themebase/src/Components/SingleContent.php',
     'Kubio\\Theme\\Flags' => $baseDir . '/lib/kubio-themebase/src/Flags.php',
+    'Kubio\\Theme\\Panels\\AiOnboardingPanel' => $baseDir . '/lib/kubio-themebase/src/Panels/AiOnboardingPanel.php',
+    'Kubio\\Theme\\ReactAssetsRegistry' => $baseDir . '/lib/kubio-themebase/src/ReactAssetsRegistry.php',
+    'Kubio\\Theme\\Singleton' => $baseDir . '/lib/kubio-themebase/src/Singleton.php',
     'Kubio\\Theme\\Theme' => $baseDir . '/lib/kubio-themebase/src/Theme.php',
     'Wolfcast\\BrowserDetection' => $baseDir . '/lib/browser-detection/BrowserDetection.php',
 );

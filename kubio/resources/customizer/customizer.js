@@ -4003,6 +4003,8 @@ function installBuilder(options) {
   });
 }
 
+top.installBuilder = installBuilder;
+
 function activateBuilder(options) {
   pluginNotice(colibriwp_plugin_status.messages.activating);
   prepareCall(function () {
@@ -4020,6 +4022,8 @@ function activateBuilder(options) {
     });
   });
 }
+
+top.activateBuilder = activateBuilder;
 
 var PluginMessageControl = /*#__PURE__*/function (_ColibriVueControl) {
   _inherits(PluginMessageControl, _ColibriVueControl);

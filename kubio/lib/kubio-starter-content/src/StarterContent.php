@@ -46,6 +46,8 @@ class StarterContent {
 	public function customize_on_save( $wp_customize ) {
 		if ( get_option( 'fresh_site' ) ) {
 			Flags::set( 'with_starter_content', true );
+            $stylesheet = get_stylesheet();
+            Flags::set( "with_starter_content_$stylesheet", true );
 		}
 	}
 
@@ -613,6 +615,9 @@ class StarterContent {
 	}
 
 	public function after_kubio_plugin_activated() {
+        if(Flags::get( 'auto_start_black_wizard_onboarding', false )) {
+            return;
+        }
 		if ( $this->is_starter_content_source() ) {
 			$section_action = Flags::get( 'kubio_starter_content_section_action' );
 
