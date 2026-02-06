@@ -27,9 +27,7 @@ class AiOnboarding
 			array($this, 'on_start_generating_ai_onboarding')
 		);
 
-
-
-		add_action('customize_save_after', array($this, 'remove_ai_notice_on_customizer_publish'));
+	    add_action('customize_save_after', array($this, 'remove_ai_notice_on_customizer_publish'));
 	}
 
     function getIsDismissedFlag() {
@@ -51,7 +49,17 @@ class AiOnboarding
 		}
 	}
 
+    function getThemeHasChanges() {
+        $theme_options = get_option('theme_mods_' . get_option('stylesheet'));
+        if(empty($theme_options)) {
+            return false;
+        }
+        if(is_array($theme_options) && count($theme_options) > 3) {
+            return true;
+        }
 
+        return false;
+    }
 	function init_ai_onboarding_panel()
 	{
 		//return;
@@ -59,6 +67,13 @@ class AiOnboarding
 		if (Flags::get($this->getIsDismissedFlag())) {
 			return;
 		}
+        if($this->getThemeHasChanges()) {
+            return;
+        }
+        //if the kubio plugin is active don't show the panel
+        if( apply_filters( 'kubio_is_enabled', false )) {
+            return;
+        }
 		add_action('customize_register', array($this, 'register_onboarding_panel'), 0);
 		add_action('customize_controls_enqueue_scripts', array($this, 'register_onboarding_panel_resources'));
 	}
