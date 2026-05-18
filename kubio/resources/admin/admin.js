@@ -1012,8 +1012,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       source: "starter-sites"
     });
   });
-  $notice_root = $notice_container.closest(".kubio-admin-big-notice");
-  $custom_close_button = $notice_root.find(".kubio-notice-dont-show-container");
+  var $notice_root = $notice_container.closest(".kubio-admin-big-notice");
+  var $custom_close_button = $notice_root.find(".kubio-notice-dont-show-container");
 
   if ($custom_close_button.length) {
     $custom_close_button.on("click", function () {

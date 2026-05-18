@@ -88,7 +88,7 @@
   margin: 1em 0;
 }
 
-.kubio-admin-big-notice div.description.large-text {
+.notice[class*=admin-big-notice] div.description.large-text {
   font-size: 13px;
   margin: 2px 0 5px;
   color: #646970;
@@ -129,6 +129,13 @@
 .siteleads-fc-widgets .customize-partial-edit-shortcut button {
   left: -68px;
   top: -34px;
+  min-width: 30px;
+  min-height: 30px;
+  width: 30px;
+  height: 30px;
+  box-sizing: border-box;
+  right: unset;
+  bottom: unset;
 }
 
 .colibri-in-customizer .siteleads-fc-widgets .customize-partial-edit-shortcut {

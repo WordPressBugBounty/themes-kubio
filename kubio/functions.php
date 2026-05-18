@@ -442,7 +442,7 @@ Hooks::prefixed_add_filter(
             $description = KubioTheme\SiteLeadsThemeKit\SiteLeads::getEnableAllThemeFeatureDescriptionText();
             $translations['customize_preview_overlay_message'] = $description;
         } else {
-            $translations['customize_preview_overlay_message']  = __( 'These features are part of the Kubio Page Builder plugin. Using them will install the plugin.', 'rufous' );
+            $translations['customize_preview_overlay_message']  = __( 'These features are part of the Kubio Page Builder plugin. Using them will install the plugin.', 'kubio' );
         }	$translations['customize_preview_overlay_button_1'] = __( 'Edit this section', 'kubio' );
 		$translations['customize_preview_overlay_button_2'] = __( 'Replace this section', 'kubio' );
 
