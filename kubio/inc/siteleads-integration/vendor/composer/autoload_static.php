@@ -4,39 +4,32 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite6e8cebc0e6145e3e0a59b9f151031b5
+class ComposerStaticInitf9ca6c5f4e7a60132a4d530a0e384886
 {
     public static $prefixLengthsPsr4 = array (
-        'K' => 
+        'K' =>
         array (
             'KubioTheme\\SiteLeadsThemeKit\\' => 29,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'KubioTheme\\SiteLeadsThemeKit\\' => 
+        'KubioTheme\\SiteLeadsThemeKit\\' =>
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
     public static $classMap = array (
-        'KubioTheme\\SiteLeadsThemeKit\\Bootstrap' => __DIR__ . '/../..' . '/src/Bootstrap.php',
-        'KubioTheme\\SiteLeadsThemeKit\\Customizer\\Controls\\SiteLeadsIntegrationButton' => __DIR__ . '/../..' . '/src/Customizer/Controls/SiteLeadsIntegrationButton.php',
-        'KubioTheme\\SiteLeadsThemeKit\\Customizer\\Sections\\SiteLeadsSection' => __DIR__ . '/../..' . '/src/Customizer/Sections/SiteLeadsSection.php',
-        'KubioTheme\\SiteLeadsThemeKit\\Flags' => __DIR__ . '/../..' . '/src/Flags.php',
-        'KubioTheme\\SiteLeadsThemeKit\\Hooks' => __DIR__ . '/../..' . '/src/Hooks.php',
-        'KubioTheme\\SiteLeadsThemeKit\\Singleton' => __DIR__ . '/../..' . '/src/Singleton.php',
-        'KubioTheme\\SiteLeadsThemeKit\\SiteLeads' => __DIR__ . '/../..' . '/src/SiteLeads.php',
-        'KubioTheme\\SiteLeadsThemeKit\\Theme' => __DIR__ . '/../..' . '/src/Theme.php',
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite6e8cebc0e6145e3e0a59b9f151031b5::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite6e8cebc0e6145e3e0a59b9f151031b5::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInite6e8cebc0e6145e3e0a59b9f151031b5::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitf9ca6c5f4e7a60132a4d530a0e384886::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitf9ca6c5f4e7a60132a4d530a0e384886::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitf9ca6c5f4e7a60132a4d530a0e384886::$classMap;
 
         }, null, ClassLoader::class);
     }
